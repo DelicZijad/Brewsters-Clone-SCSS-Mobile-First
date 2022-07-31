@@ -1,0 +1,93 @@
+@use '../global' as g;
+@each $key,
+$val in g.$card-bg {
+    .beer-card-#{$key} {
+        background: $val;
+    }
+}
+.cardHeader{
+    background-position: right center;
+    font-family: "Poppins",sans-serif;
+    @include g.tablet {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+                  @include g.desktop {
+                     background-position: center center;
+                  }
+    &__container{
+ padding-block: 3rem;
+ @include g.tablet{
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    padding-bottom: 1rem;
+ }
+    }
+    &__image{
+        height:20rem;
+        width: 50%;
+        margin-inline: auto;
+        @include g.tablet{
+            order: 2;
+            height: 30rem;
+            width: 16rem;
+            margin-right: 0;
+        }
+               @include g.desktop{
+           margin-inline: auto;
+               }  
+        
+        img{
+            height: 100%;
+        }
+    }
+&__content{
+    color: white;
+    margin-top: 2rem;
+}
+&__heading1{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+  line-height: 1;
+  @include g.tablet{
+    font-size: 4.5rem;
+  }
+}
+&__heading2{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1rem;
+@include g.tablet {
+        font-size: 2.5rem;
+    }
+}
+&__txt{
+    font-weight: 600;
+}
+&__list{
+    display: flex;
+   list-style-type: none;
+   gap: 1rem;
+   margin-block: 2rem;
+}
+&__item{
+  text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    padding-right: 1.5rem;
+    text-transform: capitalize;
+    &:not(.cardHeader__item:last-child){
+        border-right: 1px solid white;
+    }
+    h6{
+        font-size: inherit;
+        font-weight: inherit;
+        
+    }
+}
+}
+

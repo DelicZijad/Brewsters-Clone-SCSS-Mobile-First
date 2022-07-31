@@ -1,0 +1,107 @@
+@use "../global" as g;
+
+.foodHeader{
+    padding-top: 32%;
+   background: url(images/menu-Img.jpg);
+   background-size: cover;
+}
+
+.foodMain{
+    background-color: g.$pale2;
+    font-family: "Poppins",sans-serif;
+    &__container{
+        padding-block: 3rem 8rem;
+        @include g.tablet {
+               display: flex;
+               gap: 3rem;
+            }
+    }
+    &__nav{
+        background-color: lighten($color: g.$pale2, $amount: 5);
+        padding: 2rem 2.5rem;
+        display: none;
+        height: fit-content;
+        @include g.tablet {
+                display: block;
+                position: sticky;
+                top: 10%;
+            }
+            @include g.desktop{
+                top: 15%;
+            }
+        &__item{
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 1rem;
+        }
+        &__link{
+            width: max-content;
+            color: g.$txtColblack;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 350ms;
+            &:hover{
+                color: g.$main-red;
+            }
+        }
+    }
+}
+
+.foodMenu{
+    width: 100%;
+    &__seperate{
+        margin-block: 20px;
+        background-color: g.$txtColblack;
+        height: 1px!important;
+        opacity: 0.5;
+    }
+    &__heading{
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+    &__grid{
+        display: grid;
+        gap: 1rem;
+    }
+
+   &__headingSmall{
+    font-size: 18px;
+    font-weight: 900;
+    color: #a07648;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+   }
+   &__line{
+    height: 1px;
+    border-bottom: 1px dashed g.$txtColblack;
+    width: 100%;
+   }
+   &__item{
+    display: flex;
+    align-items: flex-end;
+    color: g.$txtColblack;
+ line-height: 1;
+
+   }
+   &__name{
+   width: 100%;
+   word-wrap: none;
+   text-transform: capitalize;
+   font-weight: 700;
+   }
+   &__price{
+    font-weight: 700;
+   }
+   &__list{
+    display: grid;
+    gap: 1rem;
+    @include g.tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+   }
+   &__type{
+    margin-bottom: 2rem;
+   }
+}

@@ -1,0 +1,108 @@
+
+@use "../global" as g;
+.locationHeader{
+    background: url(images/banner-find-us.jpg) no-repeat center center;
+   color: white;
+    font-family:"Roboto", sans-serif;
+    @include g.tablet{
+        background-size: cover;
+        background-position: center top;
+    }
+    &__container{
+        display: grid;
+        place-items: center;
+            gap: 2rem;
+            padding-block: 3rem;
+            *{
+                @include g.tablet{
+                    width: 60%;
+                }
+            }
+    }
+    *{
+        text-align: center;
+    }
+    &__heading{
+        font-size: 1.75rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        @include g.tablet{
+            font-size: 3.5rem;
+        }
+    }
+    &__para{
+        font-weight: 700;
+    }
+    &__mini{
+        font-weight: 700;
+        font-size: 13px;
+    }
+}
+
+
+.locationMain{
+    padding-block: 3rem;
+    background-color: g.$pale2;
+    &__container{
+        padding-inline: 0.5rem;
+        display: grid;
+        gap: 2rem;
+        @include g.desktop{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+
+.locationList{
+font-family: 'Poppins',sans-serif;
+color: g.$txtColblack;
+    &__heading{
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        @include g.tablet{
+            font-size: 2.25rem;
+        }
+    }
+    &__small{
+        font-size: 14px;
+        font-weight: 900;
+        text-transform: uppercase;
+        @include g.tablet {
+                font-size: 20px;
+            }
+    }
+
+    &__grid{
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        @include g.tablet{
+            grid-template-columns: repeat(3,1fr);
+        }
+        @include g.desktop{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    &__name{
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-bottom: 0.3rem;
+    }
+    &__address{
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+       text-transform: capitalize;
+    }
+    &__detail{
+        color: g.$main-red;
+        font-weight: 700;
+        &:hover,&:focus{
+            color: darken($color: g.$main-red, $amount: 15);
+        }
+    }
+}

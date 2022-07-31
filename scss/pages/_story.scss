@@ -1,0 +1,125 @@
+@use  '../global' as g;
+.storyHeader{
+    background: url(images/bg-story.jpg) no-repeat center center;
+    background-size: cover;
+    padding-block: 2rem;
+    color: white;
+    font-family: "Poppins",sans-serif;
+    &__container{
+        @include g.tablet {
+              display: grid;
+              grid-template-columns: 4fr 5fr;
+              gap: 1rem;
+            }
+    }
+    &__heading{
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        @include g.tablet{
+            font-size: 3rem;
+            text-align: left;
+        }
+    }
+    &__txt{
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        line-height: 1.5;
+        @include g.tablet {
+                
+                text-align: left;
+            }
+    }
+    &__image{
+        padding: 0.6rem;
+        background-color: white;
+        transform: rotate(2deg);
+        @include g.tablet {
+               transform: rotate(5deg);
+            }
+        img{
+            height: 100%;
+        }
+    }
+}
+
+.storyMain{
+    background-color: g.$pale2;
+    padding-block: 3rem;
+    &__lead{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        @include g.tablet{
+            grid-template-columns: repeat(2,1fr);
+            gap: 4rem;
+        }
+
+      &__content{
+        display: grid;
+        place-content: center;
+        gap: 2rem;
+        @include g.tablet{
+            padding-block: 3rem;
+            gap: 1rem;
+        }
+        @include g.desktop{
+            padding-block: 7rem;
+            gap: 0.5rem;
+        }
+      }
+      &__image{
+        height: 100%;
+        img{
+            height: 100%;
+        }
+      }
+    }
+   &__heading{
+    color: g.$main-red;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    @include g.tablet{
+        text-align: left;
+        font-size: 3rem;
+        line-height: 1;
+    }
+   }
+   &__para{
+    text-align: center;
+    font-weight: 700;
+    color: g.$txtColblack;
+    line-height: 1.5;
+        @include g.tablet {
+                text-align: left;
+            }
+   }
+
+   &__gallery{
+    display: grid;
+    gap: 3rem;
+        @include g.tablet {
+                grid-template-columns: repeat(3,1fr);
+            }
+   }
+
+   &__quote{
+    font-size: 20px;
+    color: g.$txtColGray5;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 4rem;
+    @include g.tablet{
+        font-size: 22px;
+    }
+    @include g.tablet{
+        font-size: 1.5rem;
+    }
+   }
+}
